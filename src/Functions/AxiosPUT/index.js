@@ -1,4 +1,4 @@
-import api from '../../Services/api';
+import api from '../../services/api';
 
 export default function AxiosPUT(route, data, auth) {
   const userId = localStorage.getItem('user');

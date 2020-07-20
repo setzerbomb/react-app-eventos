@@ -16,7 +16,8 @@ function Register({ history }) {
   const [senha, setSenha] = useState('');
   const [confirmacaoSenha, setConfirmacaoSenha] = useState('');
 
-  const registrar = () => {
+  const registrar = (e) => {
+    e.preventDefault();
     const data = {
       nome,
       senha,
@@ -62,7 +63,7 @@ function Register({ history }) {
           <Card.Body>
             <Row>
               <Col>
-                <Form>
+                <Form onSubmit={registrar}>
                   <Form.Row>
                     <Form.Group as={Col} md="12">
                       <h2>Registrar-se</h2>
@@ -126,7 +127,7 @@ function Register({ history }) {
                       />
                     </Form.Group>
                   </Form.Row>
-                  <Button variant="success" size="lg" block onClick={registrar}>
+                  <Button variant="success" size="lg" block type="submit">
                     Cadastrar
                   </Button>
                 </Form>

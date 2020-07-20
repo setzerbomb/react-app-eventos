@@ -10,7 +10,7 @@ export default function Fade({ show, children, callback }) {
   return (
     shouldRender && (
       <div
-        style={{ animation: `${show ? 'fadeIn' : 'fadeOut'} 2s` }}
+        style={{ animation: `${show ? 'fadeIn' : 'fadeOut'} 1s` }}
         onAnimationEnd={onAnimationEnd}
       >
         {children}

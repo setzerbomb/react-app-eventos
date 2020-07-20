@@ -71,7 +71,7 @@ function Login({ history }) {
           <Card.Body>
             <Row>
               <Col>
-                <Form>
+                <Form onSubmit={logar}>
                   <Form.Row>
                     <Form.Group as={Col} md="12">
                       <h2>Autenticação</h2>
@@ -113,7 +113,7 @@ function Login({ history }) {
                     </Form.Group>
                   </Form.Row>
 
-                  <Button variant="primary" size="lg" block onClick={logar}>
+                  <Button type="submit" variant="primary" size="lg" block>
                     Entrar
                   </Button>
                 </Form>

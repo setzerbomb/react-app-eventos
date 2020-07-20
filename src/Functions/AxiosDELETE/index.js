@@ -1,4 +1,4 @@
-import api from '../../Services/api';
+import api from '../../services/api';
 
 export default function AxiosDELETE(route) {
   const userId = localStorage.getItem('user');

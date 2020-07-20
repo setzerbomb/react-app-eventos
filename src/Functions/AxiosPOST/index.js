@@ -4,6 +4,9 @@ export default function AxiosPOST(route, data, auth) {
   const userId = localStorage.getItem('user');
   const language = localStorage.getItem('language');
 
+  console.tron.log(data);
+  console.tron.log(route);
+
   return api.request(route, {
     method: 'POST',
     headers: {

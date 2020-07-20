@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
-export const Text = styled.h1`
-  font-size: 800%;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #000;
+import { Container } from 'react-bootstrap';
+
+export const StyledContainer = styled(Container)`
+  min-width: 50%;
+  max-width: 70%;
+  margin: 1% auto;
+
+  div.card {
+    margin-top: 20px;
+  }
 `;
