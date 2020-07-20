@@ -12,10 +12,10 @@ export default function eventos(state = [], action) {
       return produce(state, (draft) => {
         const { events } = action;
 
-        console.tron.log(draft);
-
-        if (events.length > 0) {
-          draft.push(...events);
+        if (draft.length < 1) {
+          if (events.length > 0) {
+            draft.push(...events);
+          }
         }
       });
     case 'DELETE_EVENT_SUCCESS':
