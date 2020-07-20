@@ -26,4 +26,3 @@ jobs:
         cmd: build
     - run: yarn ci
     - run: yarn build --if-present
-    - run: yarn test
