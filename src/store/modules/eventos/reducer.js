@@ -32,7 +32,7 @@ export default function eventos(state = [], action) {
       return produce(state, (draft) => {
         const { id, event } = action;
 
-        console.tron.log('UPDATE');
+        // console.tron.log('UPDATE');
       });
     default:
       return state;

@@ -27,7 +27,7 @@ function* addEvent(action) {
       toast.error('Não foi possível adionar o evento');
     }
   } catch (e) {
-    console.tron.log(e);
+    toast.error('Erro inexperado, contate o desenvolvedor');
   }
   return;
 }
@@ -44,7 +44,7 @@ function* deleteEvent(action) {
       toast.error('Não foi possível remover o evento');
     }
   } catch (e) {
-    console.tron.log(e);
+    toast.error('Erro inexperado, contate o desenvolvedor');
   }
   return;
 }
@@ -61,7 +61,7 @@ function* updateEvent(action) {
       toast.error('Não foi possível atualizar o evento');
     }
   } catch (e) {
-    console.tron.log(e);
+    toast.error('Erro inexperado, contate o desenvolvedor');
   }
   return;
 }
@@ -71,7 +71,7 @@ function* loadEvents() {
     const { data: eventos } = yield call(AxiosGET, '/events');
     yield put(loadEventsSuccess(eventos));
   } catch (e) {
-    console.tron.log(e);
+    toast.error('Erro inexperado, contate o desenvolvedor');
   }
   return;
 }
