@@ -7,7 +7,7 @@ import { Text } from './styles';
 function Main() {
   return (
     <Container>
-      <Text>Hello World</Text>
+      <Text>Running App</Text>
     </Container>
   );
 }
