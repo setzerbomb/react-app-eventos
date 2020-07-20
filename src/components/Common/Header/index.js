@@ -11,12 +11,8 @@ function Header() {
         <Nav className="mr-auto">
           <p>Eventos App</p>
         </Nav>
-        <Nav.Link href="#">
-          <Link to="/login">Login</Link>
-        </Nav.Link>
-        <Nav.Link href="#">
-          <Link to="/register">Registro</Link>
-        </Nav.Link>
+        <Link to="/login">Login</Link>
+        <Link to="/register">Registro</Link>
       </Navbar.Collapse>
     </Navbar>
   );
