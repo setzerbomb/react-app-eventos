@@ -32,7 +32,12 @@ export default function eventos(state = [], action) {
       return produce(state, (draft) => {
         const { id, event } = action;
 
-        // console.tron.log('UPDATE');
+        const index = draft.findIndex((e) => e.id === id);
+
+        if (index > -1) {
+          draft.splice(index, 1);
+          draft.push({ id, nome: event.nome, data: event.data });
+        }
       });
     default:
       return state;

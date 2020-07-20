@@ -6,8 +6,6 @@ import AxiosPOST from '../../../Functions/AxiosPOST';
 import AxiosPUT from '../../../Functions/AxiosPUT';
 import AxiosDELETE from '../../../Functions/AxiosDELETE';
 
-import api from '../../../services/api';
-
 import {
   deleteEventSuccess,
   addEventSuccess,
@@ -52,11 +50,11 @@ function* deleteEvent(action) {
 function* updateEvent(action) {
   try {
     const { id, event } = action;
-    const { data, status } = yield call(AxiosPUT, `/events/${id}`, event, null);
+    const { data, status } = yield call(AxiosPUT, `/events/${id}`, event);
 
     if (status === 200) {
       toast.info('Evento atualizado com sucesso');
-      yield put(updateEventSuccess(data));
+      yield put(updateEventSuccess(id, data));
     } else {
       toast.error('Não foi possível atualizar o evento');
     }

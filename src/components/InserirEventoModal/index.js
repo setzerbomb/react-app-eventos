@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, Modal, Form, Col } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -8,9 +8,6 @@ import * as EventActions from '../../store/modules/eventos/actions';
 function InserirEventoModal({ addEventRequest, onHide, show }) {
   const [nome, setNome] = useState('');
   const [data, setData] = useState('');
-
-  const [message, setMessage] = useState('');
-  const [messageType, setMessageType] = useState('');
 
   function resetState() {
     setData('');
