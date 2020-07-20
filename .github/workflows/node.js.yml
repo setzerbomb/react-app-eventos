@@ -23,7 +23,7 @@ jobs:
         uses: Borales/actions-yarn@v2.3.0
         with:
           cmd: build
-      - run: yarn
       - run: yarn ci
+      - run: yarn install
       - run: yarn build --if-present
       - run: yarn test
