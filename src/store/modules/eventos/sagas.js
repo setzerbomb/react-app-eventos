@@ -16,7 +16,8 @@ import {
 function* addEvent(action) {
   const { event } = action;
   try {
-    const { data, status } = yield call(AxiosPOST, '/events', event, null);
+    const response = yield call(AxiosPOST, '/events', event, null);
+    const { data, status } = response;
 
     if (status === 200) {
       toast.info('Evento adicionado com sucesso');
@@ -24,8 +25,8 @@ function* addEvent(action) {
     } else {
       toast.error('Não foi possível adionar o evento');
     }
-  } catch (e) {
-    toast.error('Erro inexperado, contate o desenvolvedor');
+  } catch (err) {
+    toast.error(err.response.data.message);
   }
   return;
 }
@@ -41,8 +42,8 @@ function* deleteEvent(action) {
     } else {
       toast.error('Não foi possível remover o evento');
     }
-  } catch (e) {
-    toast.error('Erro inexperado, contate o desenvolvedor');
+  } catch (err) {
+    toast.error(err.response.data.message);
   }
   return;
 }
@@ -58,8 +59,8 @@ function* updateEvent(action) {
     } else {
       toast.error('Não foi possível atualizar o evento');
     }
-  } catch (e) {
-    toast.error('Erro inexperado, contate o desenvolvedor');
+  } catch (err) {
+    toast.error(err.response.data.message);
   }
   return;
 }
@@ -68,8 +69,8 @@ function* loadEvents() {
   try {
     const { data: eventos } = yield call(AxiosGET, '/events');
     yield put(loadEventsSuccess(eventos));
-  } catch (e) {
-    toast.error('Erro inexperado, contate o desenvolvedor');
+  } catch (err) {
+    toast.error(err.response.data.message);
   }
   return;
 }

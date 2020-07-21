@@ -32,10 +32,7 @@ function Register({ history }) {
       })
       .catch((err) => {
         if (err.response) {
-          const {
-            response: { data: description },
-          } = err;
-          setErrorMessage(description.error_description || description);
+          setErrorMessage(err.response.data.message);
         }
       });
   };
